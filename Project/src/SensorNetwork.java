@@ -45,15 +45,11 @@ public class SensorNetwork {
             set accumulates more sensors than the count of the max set, update the max set.
          */
         t1 = System.nanoTime();
+
+
         for(int i = 1; i < sensors.size(); i++) {
             Point p = sensors.get(i);
-            boolean isValid = true;
-            for(Point q : currSet) {
-                if(distance(p,q) > distance) {
-                    isValid = false;
-                    break;
-                }
-            }
+            boolean isValid = currSet.stream().allMatch(q -> distance(p,q) <= distance);
             if(isValid) currSet.add(p);
             if(currSet.size() > maxCount.size()) maxCount = currSet;
         }

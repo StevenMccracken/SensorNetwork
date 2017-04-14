@@ -1,3 +1,3 @@
 # Sensor Network
 ## Assignment 3 for CSULB Analysis of Algorithms course
-Assignment description can be found in Assignment.pdf
+The assignment description can be found [here](Assignment.pdf)
